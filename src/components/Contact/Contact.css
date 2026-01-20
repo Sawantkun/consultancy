@@ -1,0 +1,126 @@
+.contact {
+  padding: 10rem 0;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.contact-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info {
+  padding: 5rem;
+  background: rgba(99, 102, 241, 0.05);
+  border-right: 1px solid var(--glass-border);
+}
+
+.contact-info .section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info .section-title span {
+  color: var(--accent-indigo);
+}
+
+.contact-info .section-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 4rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.detail-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.detail-item .icon {
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.detail-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.contact-form {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-indigo);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.contact-form .btn {
+  width: 100%;
+  padding: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-info {
+    padding: 3rem;
+    border-right: none;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  
+  .contact-form {
+    padding: 3rem;
+  }
+}

@@ -1,0 +1,120 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.logo span {
+  color: var(--accent-indigo);
+}
+
+.nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-arrow {
+  font-size: 0.6rem;
+  margin-left: 0.4rem;
+  display: inline-block;
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  margin-top: 1rem;
+  background: #1e293b; /* Solid Slate 800 */
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  min-width: 200px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    display: none; /* In a real app we'd add a mobile menu here */
+  }
+}

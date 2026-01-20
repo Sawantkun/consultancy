@@ -1,0 +1,130 @@
+.about {
+  padding: 10rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-glass-illustration {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+.shape-1 {
+  width: 60%;
+  height: 60%;
+  transform: rotate(15deg);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent);
+  animation: float 4s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 50%;
+  height: 50%;
+  transform: rotate(-10deg);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.05), transparent);
+  animation: float 5s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent);
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass-node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-indigo);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--accent-indigo);
+}
+
+.node-1 { top: 20%; right: 20%; }
+.node-2 { bottom: 25%; left: 15%; }
+
+.about-text .section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.about-text .section-title span {
+  color: var(--accent-indigo);
+}
+
+.about-text .section-description {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-indigo);
+  margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 4rem;
+  }
+  
+  .about-visual {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-stats {
+    justify-content: center;
+  }
+}
