@@ -6,34 +6,26 @@ const About = () => {
       <div className="about-container">
         <div className="about-content">
           <div className="about-visual reveal reveal-left">
-            <div className="about-glass-illustration">
-              <div className="glass-shape shape-1"></div>
-              <div className="glass-shape shape-2"></div>
-              <div className="glass-shape shape-3"></div>
-              <div className="glass-node node-1"></div>
-              <div className="glass-node node-2"></div>
+            <div className="about-image-container">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop&q=80" 
+                alt="ASC IT Services Team" 
+                className="about-image"
+              />
+              <div className="image-overlay"></div>
             </div>
           </div>
           <div className="about-text reveal reveal-right">
-            <h2 className="section-title">Redefining <span>Human Potential</span></h2>
+            <h2 className="section-title">About <span>ASC IT Services</span></h2>
             <p className="section-description">
-              At company name, we're not just a consultancy; we're the bridge between ambitious enterprises and world-class talent. Our AI-driven approach ensures that every match is more than just a placement—it's a strategic alignment for growth.
+              At ASC IT Services, we connect exceptional talent with forward-thinking organizations and deliver high-impact IT solutions that fuel growth, efficiency, and innovation. Combining deep industry expertise in recruitment and IT services, we partner with businesses of all sizes to solve their most pressing workforce and technology challenges.
             </p>
-            <div className="about-stats">
-              <div className="stat-item">
-                <h3>15+</h3>
-                <p>Years of Excellence</p>
-              </div>
-              <div className="stat-item">
-                <h3>500+</h3>
-                <p>Global Partners</p>
-              </div>
-              <div className="stat-item">
-                <h3>10k+</h3>
-                <p>Successful Placements</p>
-              </div>
-            </div>
-            <button className="btn btn-secondary">Our Story</button>
+            <p className="section-description">
+              We specialize in end-to-end staffing, talent acquisition, and IT services that empower our clients to build future-ready teams. We believe that people are the greatest asset of any organization, and our mission is to help companies find, attract, and retain the right talent while helping candidates find opportunities that align with their ambitions and skills.
+            </p>
+            <p className="section-description">
+              We are more than just a service provider — we are your strategic ally in growth, committed to helping you shape a thriving workforce and unlock transformative technology opportunities.
+            </p>
           </div>
         </div>
       </div>

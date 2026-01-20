@@ -8,7 +8,7 @@ const Contact = () => {
           <div className="contact-info reveal reveal-left">
             <h2 className="section-title">Let's <span>Connect</span></h2>
             <p className="section-description">
-              Ready to elevate your talent strategy? Our experts are here to help you scale your vision with precision and speed.
+              Ready to connect exceptional talent with your organization or leverage cutting-edge IT solutions? Our team is here to help you build future-ready teams and drive innovation. Let's discuss how we can partner with you.
             </p>
             <div className="contact-details">
               <div className="detail-item">

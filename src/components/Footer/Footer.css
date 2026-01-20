@@ -18,7 +18,7 @@
 }
 
 .footer-brand {
-  max-width: 320px;
+  max-width: 500px;
 }
 
 .footer-brand .logo {
@@ -26,9 +26,33 @@
   font-size: 1.8rem;
 }
 
-.footer-brand p {
+.footer-brand .motto {
+  color: var(--accent-indigo);
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.vision-mission {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.vm-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.vm-item p {
   color: var(--text-secondary);
   line-height: 1.6;
+  font-size: 0.9rem;
 }
 
 .footer-links {
@@ -105,6 +129,16 @@
     max-width: 100%;
   }
 
+  .vision-mission {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .footer-brand .motto {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
   .footer-links {
     gap: 3rem;
   }
@@ -135,8 +169,23 @@
     margin-bottom: 1rem;
   }
 
-  .footer-brand p {
-    font-size: 0.9rem;
+  .footer-brand .motto {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .vision-mission {
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .vm-item h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .vm-item p {
+    font-size: 0.85rem;
   }
 
   .footer-links {

@@ -57,9 +57,9 @@ const Header = () => {
       {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
       <header className="header">
         <div className="header-container">
-          <div className="logo">
-            LOGO<span>text</span>
-          </div>
+        <div className="logo">
+          ASC<span>IT Services</span>
+        </div>
           <button 
             className={`hamburger ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
@@ -90,27 +90,11 @@ const Header = () => {
               <a href="#consulting" onClick={closeMenu}>Consulting</a>
             </div>
           </div>
-          <a href="#resources" className="nav-link" onClick={closeMenu}>
-            Resources
+          <a href="#why-choose-us" className="nav-link" onClick={closeMenu}>
+            Why Choose Us
           </a>
-          <div className="nav-dropdown">
-            <a 
-              href="#opportunity" 
-              className="nav-link"
-              onClick={(e) => {
-                e.preventDefault();
-                toggleDropdown('opportunity');
-              }}
-            >
-              Opportunity <span className="dropdown-arrow">▼</span>
-            </a>
-            <div className={`dropdown-menu ${activeDropdown === 'opportunity' ? 'active' : ''}`}>
-              <a href="#programs" onClick={closeMenu}>Programs</a>
-              <a href="#partnerships" onClick={closeMenu}>Partnerships</a>
-            </div>
-          </div>
-          <a href="#careers" className="nav-link" onClick={closeMenu}>
-            Careers
+          <a href="#industries" className="nav-link" onClick={closeMenu}>
+            Industries
           </a>
           <a href="#contact" className="nav-link" onClick={closeMenu}>
             Contact Us

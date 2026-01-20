@@ -7,14 +7,13 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-text">
-            <div className="hero-badge">Next-Gen Talent Acquisition</div>
+            <div className="hero-badge">Your Strategic Partner in Growth</div>
             <h1 className="hero-title">
-              AI-Driven <br />
-              <span>Talent Solutions</span>
+              Connecting Talent <br />
+              <span>& Technology</span>
             </h1>
             <p className="hero-description">
-              Elevate your talent strategy with state-of-the-art AI solutions. 
-              We're bridging the gap between world-class talent and future-ready enterprises.
+              We deliver end-to-end recruitment and IT services that help businesses scale faster, innovate smarter, and stay ahead of the competition.
             </p>
             
             <div className="hero-actions">
@@ -38,10 +37,10 @@ const Hero = () => {
               <div className="glow-effect"></div>
               <img src={heroImage} alt="AI Talent Visual" className="main-visual" />
               <div className="floating-card card-1">
-                <span>⚡</span> AI Matching
+                <span>🎯</span> Recruitment & Staffing
               </div>
               <div className="floating-card card-2">
-                <span>🎯</span> Skill Verification
+                <span>💻</span> IT Services & Consulting
               </div>
             </div>
           </div>
