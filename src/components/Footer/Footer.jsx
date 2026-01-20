@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-brand">
-            <div className="logo">neer<span>info</span></div>
+            <div className="logo">logo<span>name</span></div>
             <p>Intelligence-driven talent solutions for the next generation of industry leaders.</p>
           </div>
           <div className="footer-links">
