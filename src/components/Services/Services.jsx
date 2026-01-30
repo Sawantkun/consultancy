@@ -1,21 +1,22 @@
 import './Services.css';
+import { FaBullseye, FaLaptopCode, FaUsers } from 'react-icons/fa';
 
 const Services = () => {
   const services = [
     {
       title: 'Recruitment & Staffing Solutions',
       description: 'Full-cycle talent acquisition across technical and non-technical roles. We help you find the right talent for every position.',
-      icon: '🎯'
+      icon: FaBullseye
     },
     {
       title: 'IT Services & Consulting',
       description: 'Custom IT solutions, digital transformation support, and technology consulting to drive your business forward.',
-      icon: '💻'
+      icon: FaLaptopCode
     },
     {
       title: 'Managed Workforce Solutions',
       description: 'From contract staffing to RPO and workforce planning, we provide comprehensive workforce management solutions.',
-      icon: '👥'
+      icon: FaUsers
     }
   ];
 
@@ -29,13 +30,18 @@ const Services = () => {
           </p>
         </div>
         <div className="services-grid">
-          {services.map((service, index) => (
-            <div key={index} className={`service-card reveal reveal-up delay-${index}`}>
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div key={index} className={`service-card reveal reveal-up delay-${index}`}>
+                <div className="service-icon">
+                  <IconComponent />
+                </div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

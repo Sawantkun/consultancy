@@ -1,4 +1,4 @@
-import './WhyChooseUs.css';
+import '../components/WhyChooseUs/WhyChooseUs.css';
 import { FaBullseye, FaLightbulb, FaSyncAlt, FaBolt, FaWrench, FaHandshake } from 'react-icons/fa';
 
 const WhyChooseUs = () => {
@@ -36,30 +36,32 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="why-choose-us reveal reveal-up">
-      <div className="why-choose-us-container">
-        <div className="why-choose-us-header">
-          <h2 className="section-title">Why <span>Choose Us</span></h2>
-          <p className="section-description">
-            We go beyond traditional recruitment and IT service models to deliver reliable, scalable, and business-driven solutions. Our approach is rooted in understanding your goals and delivering outcomes that matter.
-          </p>
-        </div>
-        <div className="features-grid">
-          {features.map((feature, index) => {
-            const IconComponent = feature.icon;
-            return (
-              <div key={index} className={`feature-card reveal reveal-up delay-${index}`}>
-                <div className="feature-icon">
-                  <IconComponent />
+    <div className="page-content">
+      <section className="why-choose-us reveal reveal-up active" style={{ paddingTop: '120px' }}>
+        <div className="why-choose-us-container">
+          <div className="why-choose-us-header">
+            <h2 className="section-title">Why <span>Choose Us</span></h2>
+            <p className="section-description">
+              We go beyond traditional recruitment and IT service models to deliver reliable, scalable, and business-driven solutions. Our approach is rooted in understanding your goals and delivering outcomes that matter.
+            </p>
+          </div>
+          <div className="features-grid">
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <div key={index} className={`feature-card reveal reveal-up delay-${index}`}>
+                  <div className="feature-icon">
+                    <IconComponent />
+                  </div>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
                 </div>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

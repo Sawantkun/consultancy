@@ -22,8 +22,31 @@
 }
 
 .footer-brand .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+.footer-brand .logo-image {
+  height: 75px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-brand .logo-text {
   font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  display: flex;
+  align-items: center;
+}
+
+.footer-brand .logo-text span {
+  color: var(--accent-indigo);
 }
 
 .footer-brand .motto {
@@ -99,15 +122,26 @@
 }
 
 .social-links a {
-  color: var(--text-secondary);
+  color: #64748b;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  color: var(--accent-indigo);
+  color: #ffffff;
+  background: var(--accent-indigo);
+  border-color: var(--accent-indigo);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
 }
 
 @media (max-width: 1024px) {
@@ -164,9 +198,12 @@
     margin-bottom: 2.5rem;
   }
 
-  .footer-brand .logo {
+  .footer-brand .logo-image {
+    height: 55px;
+  }
+
+  .footer-brand .logo-text {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
 
   .footer-brand .motto {

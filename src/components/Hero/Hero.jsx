@@ -1,7 +1,80 @@
 import './Hero.css';
 import heroImage from '../../assets/ai_talent_hero_dim_visual_1768893244381.png';
+import { FaBullseye, FaLaptopCode } from 'react-icons/fa';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 const Hero = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    if (location.pathname === '/') {
+      // If on home page, scroll to contact section
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        const headerOffset = 100; // Account for fixed header
+        const elementPosition = contactSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // If on another page, navigate to home and then scroll
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          const headerOffset = 100; // Account for fixed header
+          const elementPosition = contactSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  };
+
+  const handleLearnMore = () => {
+    if (location.pathname === '/') {
+      // If on home page, scroll to about section
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        const headerOffset = 100; // Account for fixed header
+        const elementPosition = aboutSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // If on another page, navigate to home and then scroll
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          const headerOffset = 100; // Account for fixed header
+          const elementPosition = aboutSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <section className="hero">
       <div className="hero-container">
@@ -17,8 +90,8 @@ const Hero = () => {
             </p>
             
             <div className="hero-actions">
-              <button className="btn btn-primary">Get Started</button>
-              <button className="btn btn-secondary">Learn More</button>
+              <button className="btn btn-primary" onClick={handleGetStarted}>Get Started</button>
+              <button className="btn btn-secondary" onClick={handleLearnMore}>Learn More</button>
             </div>
 
             <div className="hero-trust">
@@ -36,12 +109,12 @@ const Hero = () => {
             <div className="visual-container">
               <div className="glow-effect"></div>
               <img src={heroImage} alt="AI Talent Visual" className="main-visual" />
-              <div className="floating-card card-1">
-                <span>🎯</span> Recruitment & Staffing
-              </div>
-              <div className="floating-card card-2">
-                <span>💻</span> IT Services & Consulting
-              </div>
+              <Link to="/services" className="floating-card card-1">
+                <span><FaBullseye /></span> Recruitment & Staffing
+              </Link>
+              <Link to="/services" className="floating-card card-2">
+                <span><FaLaptopCode /></span> IT Services & Consulting
+              </Link>
             </div>
           </div>
         </div>

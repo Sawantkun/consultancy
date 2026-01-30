@@ -1,4 +1,6 @@
 import './Footer.css';
+import { Link } from 'react-router-dom';
+import { FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -6,7 +8,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-brand">
-            <div className="logo">ASC<span>IT Services</span></div>
+            <Link to="/" className="logo">
+              <img src="/logo.png" alt="ASC IT Services" className="logo-image" />
+            </Link>
             <p className="motto">"Connecting Talent. Empowering Technology."</p>
             <div className="vision-mission">
               <div className="vm-item">
@@ -36,11 +40,17 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 ASC IT Services. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ASC IT Services. All rights reserved.</p>
           <div className="social-links">
-            <a href="#" aria-label="LinkedIn">LN</a>
-            <a href="#" aria-label="Twitter">TW</a>
-            <a href="#" aria-label="Instagram">IG</a>
+            <a href="https://www.linkedin.com/company/asc-it-services/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="https://www.facebook.com/people/ASC-It-Services/61587050888771/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebookF />
+            </a>
+            <a href="https://www.instagram.com/ascitservices?utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram />
+            </a>
           </div>
         </div>
       </div>

@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { NavLink, useLocation, Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,6 +24,14 @@ const Header = () => {
 
   const toggleDropdown = (dropdown) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
+
+  const handleHomeClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      closeMenu();
+    }
   };
 
   // Close menu when clicking outside
@@ -57,9 +68,9 @@ const Header = () => {
       {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
       <header className="header">
         <div className="header-container">
-        <div className="logo">
-          ASC<span>IT Services</span>
-        </div>
+        <Link to="/" className="logo">
+          <img src="/logo.png" alt="ASC IT Services" className="logo-image" />
+        </Link>
           <button 
             className={`hamburger ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
@@ -70,35 +81,40 @@ const Header = () => {
             <span></span>
           </button>
           <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#home" className="nav-link active" onClick={closeMenu}>
-            Home
-          </a>
-          <div className="nav-dropdown">
-            <a 
-              href="#offerings" 
-              className="nav-link"
-              onClick={(e) => {
-                e.preventDefault();
-                toggleDropdown('offerings');
-              }}
-            >
-              Offerings <span className="dropdown-arrow">▼</span>
-            </a>
-            <div className={`dropdown-menu ${activeDropdown === 'offerings' ? 'active' : ''}`}>
-              <a href="#services" onClick={closeMenu}>Services</a>
-              <a href="#solutions" onClick={closeMenu}>Solutions</a>
-              <a href="#consulting" onClick={closeMenu}>Consulting</a>
+            <button className="mobile-close-btn" onClick={closeMenu} aria-label="Close menu">
+              <span>×</span>
+            </button>
+            <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={handleHomeClick} end>
+              Home
+            </NavLink>
+            <div className="nav-dropdown">
+              <a 
+                href="#" 
+                className={`nav-link ${(location.pathname === '/mission' || location.pathname === '/vision') ? 'active' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleDropdown('about-us');
+                }}
+              >
+                About Us <span className={`dropdown-arrow ${activeDropdown === 'about-us' ? 'active' : ''}`}>▼</span>
+              </a>
+              <div className={`dropdown-menu ${activeDropdown === 'about-us' ? 'active' : ''}`}>
+                <NavLink to="/vision" onClick={closeMenu}>Our Vision</NavLink>
+                <NavLink to="/mission" onClick={closeMenu}>Our Mission</NavLink>
+              </div>
             </div>
-          </div>
-          <a href="#why-choose-us" className="nav-link" onClick={closeMenu}>
+          <NavLink to="/services" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>
+            Services
+          </NavLink>
+          <NavLink to="/why-choose-us" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>
             Why Choose Us
-          </a>
-          <a href="#industries" className="nav-link" onClick={closeMenu}>
+          </NavLink>
+          <NavLink to="/industries" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>
             Industries
-          </a>
-          <a href="#contact" className="nav-link" onClick={closeMenu}>
+          </NavLink>
+          <NavLink to="/contact" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={closeMenu}>
             Contact Us
-          </a>
+          </NavLink>
           </nav>
         </div>
       </header>

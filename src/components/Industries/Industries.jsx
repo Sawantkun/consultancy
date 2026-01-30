@@ -1,16 +1,27 @@
 import './Industries.css';
+import { 
+  FaLaptopCode, 
+  FaUniversity, 
+  FaHospital, 
+  FaSatellite, 
+  FaShoppingCart, 
+  FaIndustry, 
+  FaBolt, 
+  FaFilm, 
+  FaBook 
+} from 'react-icons/fa';
 
 const Industries = () => {
   const industries = [
-    { name: 'Information Technology & Software Services', icon: '💻' },
-    { name: 'Banking, Financial Services & Insurance (BFSI)', icon: '🏦' },
-    { name: 'Healthcare & Life Sciences', icon: '🏥' },
-    { name: 'Telecom & Networking', icon: '📡' },
-    { name: 'Retail & E-Commerce', icon: '🛒' },
-    { name: 'Manufacturing & Engineering', icon: '🏭' },
-    { name: 'Energy & Utilities', icon: '⚡' },
-    { name: 'Media & Entertainment', icon: '🎬' },
-    { name: 'Education & EdTech', icon: '📚' }
+    { name: 'Information Technology & Software Services', icon: FaLaptopCode },
+    { name: 'Banking, Financial Services & Insurance (BFSI)', icon: FaUniversity },
+    { name: 'Healthcare & Life Sciences', icon: FaHospital },
+    { name: 'Telecom & Networking', icon: FaSatellite },
+    { name: 'Retail & E-Commerce', icon: FaShoppingCart },
+    { name: 'Manufacturing & Engineering', icon: FaIndustry },
+    { name: 'Energy & Utilities', icon: FaBolt },
+    { name: 'Media & Entertainment', icon: FaFilm },
+    { name: 'Education & EdTech', icon: FaBook }
   ];
 
   return (
@@ -23,12 +34,17 @@ const Industries = () => {
           </p>
         </div>
         <div className="industries-grid">
-          {industries.map((industry, index) => (
-            <div key={index} className={`industry-card reveal reveal-up delay-${index % 6}`}>
-              <div className="industry-icon">{industry.icon}</div>
-              <h3>{industry.name}</h3>
-            </div>
-          ))}
+          {industries.map((industry, index) => {
+            const IconComponent = industry.icon;
+            return (
+              <div key={index} className={`industry-card reveal reveal-up delay-${index % 6}`}>
+                <div className="industry-icon">
+                  <IconComponent />
+                </div>
+                <h3>{industry.name}</h3>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

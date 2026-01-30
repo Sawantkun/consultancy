@@ -1,4 +1,6 @@
 import './Contact.css';
+import { FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
+import ContactForm from './ContactForm';
 
 const Contact = () => {
   return (
@@ -12,33 +14,35 @@ const Contact = () => {
             </p>
             <div className="contact-details">
               <div className="detail-item">
-                <span className="icon">📍</span>
+                <span className="icon">
+                  <FaPhone />
+                </span>
                 <div>
-                  <h4>Office</h4>
-                  <p>Cyber City, Gurgaon, India</p>
+                  <h4>Phone</h4>
+                  <p><a href="tel:+919217617060">+91 92176 17060</a></p>
                 </div>
               </div>
               <div className="detail-item">
-                <span className="icon">✉️</span>
+                <span className="icon">
+                  <FaMapMarkerAlt />
+                </span>
+                <div>
+                  <h4>Office</h4>
+                  <p>7th Floor Gulmohar Tower/Enclave Nehru Nagar Ghaziabad</p>
+                </div>
+              </div>
+              <div className="detail-item">
+                <span className="icon">
+                  <FaEnvelope />
+                </span>
                 <div>
                   <h4>Email</h4>
-                  <p>hello@companyname.com</p>
+                  <p><a href="mailto:careers@ascitservices.com">careers@ascitservices.com</a></p>
                 </div>
               </div>
             </div>
           </div>
-          <form className="contact-form reveal reveal-right" onSubmit={(e) => e.preventDefault()}>
-            <div className="form-group">
-              <input type="text" placeholder="Your Name" required />
-            </div>
-            <div className="form-group">
-              <input type="email" placeholder="Your Email" required />
-            </div>
-            <div className="form-group">
-              <textarea placeholder="Your Message" rows="4" required></textarea>
-            </div>
-            <button className="btn btn-primary">Send Message</button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </section>

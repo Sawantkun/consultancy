@@ -179,6 +179,8 @@
 }
 
 .floating-card {
+  text-decoration: none;
+  cursor: pointer;
   position: absolute;
   padding: 1rem 1.5rem;
   background: rgba(30, 41, 59, 0.8);
@@ -192,6 +194,27 @@
   gap: 0.75rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.floating-card:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: var(--accent-indigo);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+  color: white;
+}
+
+.floating-card:visited {
+  color: white;
+}
+
+.floating-card span {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--accent-indigo);
 }
 
 .card-1 {

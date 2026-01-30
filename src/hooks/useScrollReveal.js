@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const useScrollReveal = () => {
+  const location = useLocation();
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -11,8 +14,6 @@ const useScrollReveal = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('reveal-visible');
-          // Optional: stop observing once visible
-          // observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
@@ -21,7 +22,7 @@ const useScrollReveal = () => {
     revealElements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, []);
+  }, [location]);
 };
 
 export default useScrollReveal;
